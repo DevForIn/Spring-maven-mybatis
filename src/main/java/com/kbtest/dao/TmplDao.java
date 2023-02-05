@@ -17,4 +17,8 @@ public class TmplDao {
 	public List<Map<String, Object>> getTmpl(int tmplNum) {
 		return session.selectList("tmplService.getTmpl", tmplNum);
 	}
+
+	public List<Map<String,Object>> getSpchList() {
+		return session.selectList("tmplService.getSpchList", null);
+	}
 }

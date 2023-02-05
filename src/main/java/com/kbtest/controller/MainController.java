@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kbtest.service.TmplService;
@@ -22,11 +23,14 @@ public class MainController {
 	}
 	
 	@GetMapping("/tmpl")
-	public List<Map<String, Object>> testMainPage(){
-		int tmplNum = 1;
+	public List<Map<String, Object>> testMainPage(int tmplNum){
 		System.out.println("test");
 		List<Map<String, Object>> map = tmplService.getTmpl(tmplNum);
 		return map;
 	}
 	
+	@PostMapping("/tmpl/ins")
+	public void insInfo() {
+		List<Map<String,Object>> spchMap = tmplService.getSpchList();
+	}
 }

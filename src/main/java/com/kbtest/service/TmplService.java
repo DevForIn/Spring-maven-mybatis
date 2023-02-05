@@ -21,4 +21,8 @@ public class TmplService {
 		return tmplDao.getTmpl(tmplNum);
 	}
 
+	public List<Map<String,Object>> getSpchList() {
+		return tmplDao.getSpchList();
+	}
+
 }
